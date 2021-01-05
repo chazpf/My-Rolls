@@ -28,6 +28,7 @@ const getMyRolls = () => {
     return myRolls;
 };
 
+// TODO: improve name getter, make it check for most common name or sort logs by name
 const getMyName = () => {
     let collection = Array.from(document.getElementsByClassName('you'));
     for (i = 0; i < collection.length; i++) {
@@ -56,13 +57,14 @@ const getMyAverage = () => {
     return avg;
 };
 
+// TODO: improve Common getter, make it check for ties
 const getMyCommon = () => {
     let myRolls = getMyRolls();
 
     let counts = {};
     let compare = 0;
     let mostCommon;
-    // finds most common element of array, only 1 if tied
+
     for (i = 0; i < myRolls.length; i++) {
         let j = myRolls[i];
 
