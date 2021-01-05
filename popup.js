@@ -1,3 +1,4 @@
+//TODO: Improve onclick function to await response from content then display info here in popup
 document.addEventListener(
     'DOMContentLoaded',
     function () {
