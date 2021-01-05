@@ -1,0 +1,28 @@
+{
+    "name": "My Rolls",
+    "version": "0.1",
+    "manifest_version": 2,
+    "description": "While logged in at roll20.net on a page with a chat log, this extension combs the log for your roll average and other fun facts. ",
+    "permissions": ["activeTab"],
+    "icons": {
+        "16": "/img/favicon-16x16.png",
+        "48": "/img/icon-48x48.png",
+        "128": "/img/icon-128x128.png"
+    },
+    "content_scripts": [
+        {
+            "run_at": "document_end",
+            "matches": ["https://app.roll20.net/editor/"],
+            "js": ["content.js"]
+        },
+        {
+            "run_at": "document_end",
+            "matches": ["https://app.roll20.net/campaigns/chatarchive/*"],
+            "js": ["content.js"]
+        }
+    ],
+    "browser_action": {
+        "default_popup": "popup.html",
+        "default_title": "myRolls"
+    }
+}
